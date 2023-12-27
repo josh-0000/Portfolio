@@ -1,17 +1,14 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import contentHeader from "./contentHeader";
 
 function Background() {
   return (
     <Container className="pb-5 m-0 p-0">
-      <Row className="bg-dark m-0">
-        <Col>
-          <h1 className="float-start m-4 text-light">Background</h1>
-        </Col>
-      </Row>
+      {contentHeader("Background")}
       <Row>
         <Col>
-          <h4 className="float-start m-5">Athletic History</h4>
+          <h5 className="float-start m-5 mb-3">Athletic History</h5>
         </Col>
       </Row>
       <Row>
@@ -23,7 +20,7 @@ function Background() {
       </Row>
       <Row>
         <Col>
-          <h4 className="float-start m-5">Transition to tech</h4>
+          <h5 className="float-start m-5 mb-3 mt-3">Transition to tech</h5>
         </Col>
       </Row>
       <Row>
@@ -35,7 +32,7 @@ function Background() {
       </Row>
       <Row>
         <Col>
-          <h4 className="float-start m-5">Overcoming personal challenges</h4>
+          <h5 className="float-start m-5 mb-3 mt-3">Overcoming personal challenges</h5>
         </Col>
       </Row>
       <Row>

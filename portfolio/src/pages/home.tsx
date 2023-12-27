@@ -9,12 +9,24 @@ import Skills from "../components/skills";
 import Portfolio from "../components/portfolio";
 import Contact from "../components/contact";
 import Experience from "../components/experience";
+import HomeContent from "../components/homeContent";
 
 function Home() {
-  const [view, setView] = useState("home");
+  const [view, setView] = useState("Home");
+
+  const normalButtonClassName = "btn-neutral w-100 text-start p-2 float-start mt-1";
+  const activeButtonClassName = "btn-active w-100 text-start p-2 float-start rounded mt-1";
 
   let content = null;
-
+  let homeButtonClassName = view === "Home" ? activeButtonClassName : normalButtonClassName;
+  let backgroundButtonClassName = view === "Background" ? activeButtonClassName : normalButtonClassName;
+  let educationButtonClassName = view === "Education" ? activeButtonClassName : normalButtonClassName;
+  let experienceButtonClassName = view === "Experience" ? activeButtonClassName : normalButtonClassName;
+  let certificationsButtonClassName = view === "Certifications" ? activeButtonClassName : normalButtonClassName;
+  let skillsButtonClassName = view === "Skills" ? activeButtonClassName : normalButtonClassName;
+  let portfolioButtonClassName = view === "Portfolio" ? activeButtonClassName : normalButtonClassName;
+  let contactButtonClassName = view === "Contact" ? activeButtonClassName : normalButtonClassName;
+  
   if (view === "Background") {
     content = <Background />;
   } else if (view === "Education") {
@@ -29,6 +41,8 @@ function Home() {
     content = <Contact />;
   } else if (view === "Experience") {
     content = <Experience />;
+  } else if (view === "Home") {
+    content = <HomeContent />;
   }
 
   return (
@@ -52,27 +66,60 @@ function Home() {
           <hr />
           <Container>
             <Row className="m-0">
-              <Col className="p-3">
-                <button className="btn-neutral float-start" onClick={() => setView("Background")}>Background</button>
+              <Col>
+                <button className={homeButtonClassName} onClick={() => setView("Home")}>
+                  Home
+                </button>
               </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Education")}>Education</button></Col>
+              <Col>
+                <button className={backgroundButtonClassName} onClick={() => setView("Background")}>
+                  Background
+                </button>
+              </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Experience")}>Experience</button></Col>
+              <Col>
+                <button className={educationButtonClassName} onClick={() => setView("Education")}>
+                  Education
+                </button>
+              </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Certifications")}>Certifications</button></Col>
+              <Col>
+                <button className={experienceButtonClassName} onClick={() => setView("Experience")}>
+                  Experience
+                </button>
+              </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Skills")}>Skills</button></Col>
+              <Col>
+                <button className={portfolioButtonClassName} onClick={() => setView("Portfolio")}>
+                  Portfolio
+                </button>
+              </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Portfolio")}>Portfolio</button></Col>
+              <Col>
+                <button className={skillsButtonClassName} onClick={() => setView("Skills")}>
+                  Skills
+                </button>
+              </Col>
             </Row>
             <Row className="m-0">
-              <Col className="p-3"><button className="btn-neutral float-start" onClick={() => setView("Contact")}>Contact</button></Col>
+              <Col>
+                <button className={certificationsButtonClassName} onClick={() => setView("Certifications")}>
+                  Certifications
+                </button>
+              </Col>
+            </Row>
+            <Row className="m-0">
+              <Col>
+                <button className={contactButtonClassName} onClick={() => setView("Contact")}>
+                  Contact
+                </button>
+              </Col>
             </Row>
           </Container>
         </Col>

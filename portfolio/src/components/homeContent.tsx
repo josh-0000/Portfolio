@@ -2,12 +2,12 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import contentHeader from "./contentHeader";
 
-function Portfolio() {
+function HomeContent() {
   return (
     <Container className="pb-5 m-0 p-0">
-      {contentHeader("Portfolio")}
+      {contentHeader("Home")}
     </Container>
   );
 }
 
-export default Portfolio;
+export default HomeContent;
